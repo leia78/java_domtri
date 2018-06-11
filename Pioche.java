@@ -7,11 +7,13 @@ import java.util.Collections;
 public class Pioche {
 	
 	protected ArrayList<Pion> m_lpioche = new ArrayList<Pion>();
+	protected ArrayList<Pion> m_ljoueur = new ArrayList<Pion>();
+	protected int m_nombrejoueur = 0;
 	protected int m_taille = m_lpioche.size();
 	
-	public Pioche()
+	public Pioche(int nombre)
 	{
-		
+		this.m_nombrejoueur = nombre;
 	}
 	public Pioche(ArrayList<Pion> pioche,int taille )
 	{
@@ -35,7 +37,9 @@ public class Pioche {
 		this.m_taille = m_taille;
 	}
 	
-	public void initlistetrio()
+	
+	 
+	public void initlistetrio()       //la fonction qui initialise
 	{
 		int a = 0,b = 0, c = 0;
 			for(int i = 0 ; i < 56 ; i++)
@@ -52,9 +56,9 @@ public class Pioche {
 			    
 			    m_lpioche.add(p);
 			    //System.out.println("pion " + i);
-			    //System.out.println(p.m_lnum.get(0));
-			    //System.out.println(p.m_lnum.get(1));
-			   // System.out.println(p.m_lnum.get(2));
+			   // System.out.println(p.m_lnum.get(0));
+			    // System.out.println(p.m_lnum.get(1));
+			    //System.out.println(p.m_lnum.get(2));
 			    
 			    if(c==5)
 		        {
@@ -69,30 +73,78 @@ public class Pioche {
 		            c++;
 		        }
 			    
+			    //System.out.println(m_lpioche.size());
+			    //System.out.println(m_lpioche.isEmpty());
 			}
 			
-			 
-		         Collections.shuffle(m_lpioche);
-		         for(int i=0;i<56;i++)
-		         {
-		         System.out.println("pion num" + i);
-		         System.out.println(m_lpioche.get(i).m_lnum.get(0));
-		         System.out.println(m_lpioche.get(i).m_lnum.get(1));
-		         System.out.println(m_lpioche.get(i).m_lnum.get(2));
-		         }
-		        
-		      
-		
 			
+	}	
+			
+			
+	 public ArrayList<Pion> distrib()   //la fonction qui distribue les pions
+	  	{
+		 Collections.shuffle(m_lpioche); // melange
+		 //System.out.println(m_lpioche.isEmpty());
+		 	if(m_nombrejoueur ==2)
+		 	{
+		 		for(int j=0 ; j<9 ; j++)
+		 		{
+		 			m_ljoueur.add(m_lpioche.get(j)); //ajoute dans le jeu du joueur
+		 			m_lpioche.remove(j); //retire de la pioche
+		 			//System.out.println(m_lpioche.size());
+		 			
+		 		}
+		 	}
+		 		
+		 	else
+		 	{
+		 		for(int j=0 ; j<7 ; j++)
+		 		{
+		 			m_ljoueur.add(m_lpioche.get(j));
+		 			m_lpioche.remove(j);
+		 			//System.out.println(m_lpioche.size());
+		 			
+		 		}
+		 		
+		 	}
+		 		/*for(int j=0;j<9;j++)
+		 		{
+		 			System.out.println("*****************");
+		 			System.out.println(m_ljoueur.get(j).m_lnum.get(0));
+		 			System.out.println(m_ljoueur.get(j).m_lnum.get(1));
+		 			System.out.println(m_ljoueur.get(j).m_lnum.get(2));
+		 		}*/
+			return m_ljoueur;
+			
+		 		
+		 		
+		 		
+		 	
+	  			
+	  		
+	  	}	 
+		        
+		         
+		      
+		        
 		
 		
 			
 			
 
-	}
+	
 	
 	
 	
 }
+		
+			
+			
+
+	
+	
+	
+	
+
 
 

@@ -9,6 +9,8 @@ public class Pion {
     String m_base; //en haut ou en bas
     boolean libre[] = {true, true, true};
    
+    public Pion(){}
+ 
     public Pion(ArrayList<Integer> liste, boolean pioche , String base)
     {
         this.m_lnum=liste;

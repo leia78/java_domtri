@@ -20,7 +20,6 @@ public class Rotation extends JButton implements MouseListener{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//pan.add(this);
 		this.addMouseListener(this);
 	}
 	

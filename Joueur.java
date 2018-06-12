@@ -1,17 +1,18 @@
-
 import java.util.ArrayList;
  
 public class Joueur {
    
     protected String m_pseudo;
     protected int m_score;
+    protected boolean IA;
     protected ArrayList<Pion> m_lpion ;
    
    
-    public Joueur(String pseudo)
+    public Joueur(String pseudo, boolean IA)
     {
         this.m_pseudo=pseudo;
         this.m_score=0;
+        this.IA = IA;
         this.m_lpion= null;
     }
    
@@ -48,3 +49,4 @@ public class Joueur {
     }
  
 }
+

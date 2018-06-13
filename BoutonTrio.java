@@ -44,12 +44,12 @@ public class BoutonTrio extends JButton implements MouseListener{
 	public void mouseEntered(MouseEvent arg0) {}
 	public void mouseExited(MouseEvent arg0) {}
 	public void mousePressed(MouseEvent evt) { // clic droit
-		/*try {
+		try {
 			image = ImageIO.read(new File(chemin+"g"+".png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+		}
 	}
 	public void mouseReleased(MouseEvent arg0) {}
 }

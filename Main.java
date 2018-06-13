@@ -19,6 +19,10 @@ class MaFenetre extends JFrame implements MouseListener
 	int taille=10;
 	BoutonTrio[] trio = new BoutonTrio[taille];
 	BoutonPioche Bpioche = new BoutonPioche();
+
+	JPanel pan = new JPanel();
+	Container page = getContentPane();
+
 	
 	public MaFenetre(ArrayList<Pion> listPion, ArrayList<Pion> pioche)
 	{
@@ -26,13 +30,9 @@ class MaFenetre extends JFrame implements MouseListener
 		setTitle("titre");
 		setBounds(0,0,1100,900);
 		
-		JPanel pan = new JPanel();
-		Container page = getContentPane();
-
 		page.setLayout(new BorderLayout());
 		pan.setLayout(new FlowLayout());
 
-		
 		for(int i=0; i<taille; i++)
 		{
 			//AFFICHAGE PIONS TRIO
@@ -60,8 +60,9 @@ class MaFenetre extends JFrame implements MouseListener
 		BoutonTrio b = (BoutonTrio)evt.getSource(); // on recupère le bouton cliqué
 		nomPionClic = b.nomPion ;
 		
-		//new BoutonRotation(nomPionClic);
-
+		BoutonRotation rot = new BoutonRotation(nomPionClic);
+		//pan.add(rot);
+		
 		System.out.println("Cliqué par bouton "+nomPionClic);
 	}
 	public void mouseReleased(MouseEvent arg0) {}
